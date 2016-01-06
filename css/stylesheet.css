@@ -1,0 +1,684 @@
+/* copyright tufftex group - 2016
+*/
+
+/*.fullscreen .landing .parallax{
+	background-image:url('images/slide-1.jpg');
+}*/
+
+a:hover , a:focus{
+	text-decoration:none !important;
+}
+
+.tufftex-smooth-transition-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 2000;
+}
+
+.tufftex-head {
+    height: 70px;
+    font-size: 16px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+	background-color:#000;
+}
+
+.tufftex-header-standard .tufftex-head .menu-area {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.tufftex-vertical-align-containers .header-center:before, .tufftex-vertical-align-containers .header-left:before, .tufftex-vertical-align-containers .header-right:before {
+    content: "";
+    display: inline-block;
+    margin-right: -3px;
+}
+
+.tufftex-vertical-align-containers {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.tufftex-vertical-align-containers .header-left {
+    position:absolute;
+    float: left;
+    z-index: 2;
+    height: 100%;
+	left:0;
+}
+
+.tufftex-head .tufftex-menu .tufftex-logo-wrapper a {
+    max-height: 76.5px;
+}
+
+.tufftex-logo-wrapper a {
+    position: relative;
+    top: -7px;
+}
+
+.tufftex-vertical-align-containers .tufftex-menu, .tufftex-vertical-align-containers .tufftex-logo{
+    display: inline-block;
+}
+
+.tufftex-vertical-align-containers .text-company{
+	display: table-cell;
+}
+
+.tufftex-logo-wrapper a img.dark-logo {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.tufftex-logo-wrapper a img.normal-logo {
+	opacity:0;
+	-webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+}
+
+.tufftex-logo-wrapper a img.light-logo {
+	opacity: 1;
+	margin-top:5px;
+}
+
+.tufftex-menu{
+	margin-top:10px;
+}
+
+.menu-center{
+	display:block;
+	text-align:center;
+}
+
+.tufftex-menu .navbar{
+	background:#000;
+	border:none;
+	text-transform:uppercase;
+}
+
+.tufftex-menu .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+	color: #c9a482;
+	background:none;
+}
+
+.tufftex-menu .navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.tufftex-menu .navbar-default .navbar-nav>li>a:hover {
+	color: #c9a482;
+	background:none;
+}
+
+.tufftex-menu .navbar-default .navbar-toggle {
+    border-color: #fff;
+}
+
+.tufftex-menu navbar-default .navbar-toggle:hover,.tufftex-menu .navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+.tufftex-vertical-align-containers .header-right {
+    position:absolute;
+    z-index: 2;
+    height: 100%;
+    text-align: right;
+	right:0;
+	margin-right:5px;
+	top:5px;
+}
+
+.header-slide-right{
+	display: table;
+    position: relative;
+    height: 20vh;
+    padding-left: 15px;
+    margin-right: -15px;
+    float: right;
+}
+.text-company{
+	float: left;
+    display: table;
+    height: 15vh;
+}
+
+.tufftex-head .tufftex-vertical-align-containers .tufftex-icon-list-item {
+    margin:20px 0 0 0;
+}
+
+.tufftex-icon-list-item {
+    display: table;
+    table-layout: fixed;
+    width: auto;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.tufftex-icon-list-item .tufftex-icon-list-text {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    text-align: right;
+    font-size: 16px;    
+	font-family: Scriptina,"Great Vibes",cursive;
+    color: #c9a482;
+    top: -5px;
+    padding-right: 4px;
+}
+
+.tufftex-icon-list-item .tufftex-icon-list-title {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    font-size: 13px;
+    font-family: 'Cabin';
+    color: #fff;
+    padding-left: 5px;
+	width:65%;
+	text-align:left;
+}
+/* end header */
+
+.tufftex-content {
+    margin-top: 0;
+    z-index: 100;
+    background-color: #fff;
+}
+
+.fullscreen {
+    width:100%;
+    min-height:100%;
+	background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-position:50% 50%\9 !important;
+}
+
+.overlay {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+	top:20%;
+}
+
+h2.text-tufftex-group{
+	font-family: 'Scriptina';
+	font-size:700%;
+	color:#c9a482;
+	margin-top:15%;
+}
+
+p.text-welcome-our{
+	font-family: 'Lateef';
+	color:#fff;
+	font-size:480%;
+	margin-top:30px;
+	text-transform:uppercase;
+}
+
+p.text-welcome{
+	font-family: 'Crimson';
+	color:#a5a5a5;
+	font-size: 16px;
+    margin-top: -27px;
+}
+
+h2.text-we-do{
+	font-family: 'Scriptina';
+	font-size:100px;
+	color:#c9a482;
+}
+
+img.img-we-do{
+	display:block;
+	margin:0 auto;
+}
+
+.slide-item img{
+	width:100%;
+}
+
+/* End Slide */
+
+.content{
+	margin:40px 0;
+}
+
+.tufftex-text-head{
+	margin-bottom:20px;
+}               
+
+h1.tufftex-subject{
+	font-family: 'Cocogoose';
+	background:url(../images/head-what-we-do.png) no-repeat;
+	background-position:50% 50%;
+}
+
+h1.tufftex-subject span,
+h1.contact-head span{
+	color:#c9a482;
+}
+
+.tufftex-detail-inner{
+	font-family: 'thaisanslite';
+}
+
+.tufftex-detail-inner img{
+	display:block;
+	margin:0 auto;
+}
+
+.text-detail-whatwedo h2{
+	margin:5px 0;
+}
+
+.text-detail-whatwedo p{
+	font-size:15px;
+}
+
+.tufftex-company{
+	background-color:#383838;
+}
+
+.col-md-6.video-tufftex{
+	padding:40px 0 10px 0;
+}
+
+.video-tufftex iframe{
+	border:none;
+}
+
+h1.head-company{
+	font-family: 'Scriptina';
+	color:#c9a482;
+	margin:0;
+	font-size:40px;
+}
+
+.company-detail{
+	padding:20px 10px;
+}
+
+.company-inner {
+	margin:30px 0 20px 0;
+	padding:0 20px;
+	font-family: 'thaisanslite';
+}
+
+.company-inner h2{
+	color:#00a99d;
+	font-style:italic;
+	margin: 40px 0 10px 0;
+}
+
+p.text-detail-company{
+	color:#fff;
+	font-weight: normal;
+    font-size: 17px;
+    text-align: left;
+}
+
+#owl-company .owl-buttons{
+	text-align:right;
+	padding:0 10px 20px 0;
+}
+
+#owl-company .owl-buttons div {
+    color: transparent;
+	background:none;
+	width:30px;
+	height:30px;
+	border-radius:0;
+	opacity:0.9;
+}
+
+#owl-company .owl-buttons div.owl-prev{
+	background:url(../images/prev.png) no-repeat;
+}
+
+#owl-company .owl-buttons div.owl-next{
+	background:url(../images/next.png) no-repeat;
+}
+
+.company-vision{
+	margin:30px 0;
+	font-family: 'thaisanslite';
+}
+
+.company-vision h1{
+	font-size:50px;
+	margin-bottom:10px;
+}
+
+.mission p ,
+.vision p{
+	color: #6b6b6b;
+    font-size: 24px;
+    white-space: pre-wrap;
+    font-style: italic;
+}
+
+
+.head-profile{
+	padding:40px 0 20px 0;
+}
+.head-profile .text-left{
+	color:#fff;
+}
+	
+.head-profile .text-left h1{
+	font-family: 'Cocogoose';
+	font-size:50px;
+	margin:5px 0;
+}
+
+.head-profile .text-left p{
+	font-family: 'Cabin';
+	letter-spacing: 2px;
+}
+
+.col-md-3.profile-inner {
+    padding: 0;
+	background:url(../images/bg-profile.png) no-repeat bottom;
+	background-position: 50% 210%;
+	height: 250px;
+    padding: 0px 15px;
+    color: #fff;
+	font-family: 'Cabin';
+	letter-spacing:1px;
+}
+
+.col-sm-6.profile-inner{
+	background-size: 90% 85%;
+    margin-top: 15px;
+    padding: 0 20px;
+}
+
+.col-md-3.profile-inner:first-child{
+	margin-left:0;
+}
+
+.col-md-3.profile-inner:last-child{
+	margin-right:0;
+}
+	
+.profile-inner img{
+	display:block;
+	margin:0 auto 20px auto;
+	width:148px;
+	height:148px;
+	
+}
+
+.col-md-3.profile-inner p.name{
+	font-size:16px;
+	font-weight:bold;
+}
+
+.col-md-3.profile-inner p.profile-detail{
+	font-size:12px;
+}
+
+.simple-work{
+	padding:30px 0;
+}
+
+.tufftex-text-head p{
+	font-family: 'Cabin';
+	color:#6b6b6b;
+	letter-spacing: 1px;
+}
+
+.pic-simple img{
+	margin:10px 0;
+}
+
+.button-view-all{
+	margin-top:10px;
+}
+
+.button-view-all button{
+	background-color:#00a99d;
+	width:100%;
+	border: 0;
+    color: #fff;
+    padding: 8px 0;
+    border-radius: 5px;
+}
+.hover-pic{
+	position:absolute;
+    top: 65px;
+    left: 115px;
+	color:#fff;
+}
+
+.hover-pic img{
+	display:block;
+	margin:0 auto;
+}
+
+.our-client{
+	background-color:#383838;
+	color:#fff;
+	font-family: 'Cocogoose';
+	padding:30px 0;
+}
+
+.our-client h1 span{
+	color:#00a99d;
+}
+.our-client img{
+	display:block;
+	margin:0 auto;
+}
+
+.slide-client{
+	margin:30px 0 0 0;
+}
+
+.slide-client .owl-theme .owl-controls {
+    margin-top: 20px;
+}
+
+.tufftex-service{
+	padding:30px 0;
+}
+
+.product ,
+.service{
+	float:left;
+	width:50%;
+	font-family: 'Cabin';
+	font-size:22px;
+	border:1px solid #c69c6d;
+	padding:2px 0;
+	margin-bottom:20px;
+}
+
+.product a ,
+.service a{
+	color:#c69c6d;
+}
+
+.product a:hover ,
+.service a:hover{
+	color:#33bab1;
+}
+
+.img-service{
+	margin:10px 0;
+}
+
+.open-product{
+	background-color:#484646;
+	padding: 25px 0;
+}
+
+.text-product{
+	color:#fff;
+}
+
+.text-product h1{
+	font-family: 'Cocogoose';
+	color:#c9a482;
+	margin:20px 0 5px 0;
+	font-size:30px;
+}
+
+.text-product p.head-product-company{
+	color:#6b6b6b;
+	margin-bottom:15px;
+}
+
+.text-product p.text-inner-product{
+	font-family: 'thaisanslite';
+	font-size: 20px;
+}
+
+.col-md-2 .active.hover-pic{
+	top:30%;
+	left:38%;
+}
+
+/* end content */
+.tufftex-footer{
+	background-color:#000;
+	font-family: 'Cabin';
+	color:#6b6b6b;
+	padding:20px 0 10px 0;
+}
+
+.contact-inner{
+	font-family: 'thaisanslite';
+	color:#777777;
+}
+
+.tufftex-contact{
+	padding:40px 0;
+}
+h1.contact-head{
+	font-family: 'Cocogoose';
+	color:#000;
+}
+
+.contact-inner img{
+	display:block;
+	margin:15px auto;
+}
+
+.contact-inner p{
+	font-size: 18px;
+    white-space: pre-wrap;
+    margin-bottom: 0px;
+    letter-spacing: 1.5px;
+}
+
+.social a img{
+	display:inline;
+	margin:50px 5px 20px 5px;
+}
+
+.social a img:hover{
+	opacity:0.5;
+}
+
+/* teb & ipad */
+
+.img-service img,
+.pic-simple img{
+	width:100%;
+}
+
+.hover-pic img{
+	width:auto;
+}
+
+.col-sm-4.address p{
+	white-space:normal;
+}
+
+@media screen and (max-width: 1024px) {
+	.col-md-2 .active.hover-pic {
+		top: 20%;
+		left: 28%;
+	}
+}
+@media screen and (max-width: 768px) {
+.col-sm-3 .active.hover-pic{
+	top:20%;
+	left:29%;
+	font-size:15px;
+}
+
+.company-inner h2 {
+	font-size:18px;
+}
+p.text-detail-company {
+	padding: 3px 0px;
+}
+h2.text-tufftex-group {
+	font-size:40px;
+	margin-top:19%;
+}
+p.text-welcome-our {
+	font-size:24px;
+	margin-top: 20px;
+}
+p.text-welcome {
+	margin-top:-15px;
+}
+.tufftex-main-menu>ul>li>a {
+	padding:0 10px;
+}
+.tufftex-head {
+	font-size:14px;
+}
+
+.tufftex-menu {
+	margin: -10px 0 0 90px;
+	width:100%;
+}
+.tufftex-vertical-align-containers .header-right {
+	display:none;
+}
+}
+
+@media only screen and (max-device-width: 640px) and (orientation: portrait) {
+	.tufftex-menu {
+	margin: -10px 0 0 20px;
+}
+.tufftex-content{
+	margin-top:70px !important;
+}
+
+h2.text-tufftex-group{
+	margin-top: -7%;
+}
+
+.col-sm-3 .active.hover-pic {
+	width:41%;
+	height:40%;
+}
+
+.col-sm-3 .active.hover-pic p{
+	font-size:12px;
+}
+
+p.text-welcome {
+	font-size:14px;
+}
+}
+
+.col-sm-3 .hover-pic h3{
+	font-size:18px;
+	margin:2px 0;
+}

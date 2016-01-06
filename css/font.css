@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+	font-family: 'Cabin';
+	src: url('../fonts/Cabin-Regular.eot');
+	src: local('☺'), url('../fonts/Cabin-Regular.woff') format('woff'), url('../fonts/Cabin-Regular.ttf') format('truetype'), url('../fonts/Cabin-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lateef';
+	src: url('../fonts/LateefRegOT.eot');
+	src: local('☺'), url('../fonts/LateefRegOT.woff') format('woff'), url('../fonts/LateefRegOT.ttf') format('truetype'), url('../fonts/LateefRegOT.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Scriptina';
+	src: url('../fonts/SCRIPTIN.eot');
+	src: local('☺'), url('../fonts/SCRIPTIN.woff') format('woff'), url('../fonts/SCRIPTIN.ttf') format('truetype'), url('../fonts/SCRIPTIN.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Crimson';
+	src: url('../fonts/CrimsonText-Regular.eot');
+	src: local('☺'), url('../fonts/CrimsonText-Regular.woff') format('woff'),url('../fonts/CrimsonText-Regular.ttf') format('truetype'), url('../fonts/CrimsonText-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cocogoose';
+	src: url('../fonts/Cocogoose_trial.eot');
+	src: local('☺'), url('../fonts/Cocogoose_trial.woff') format('woff'), url('../fonts/Cocogoose_trial.ttf') format('truetype'),url('../fonts/Cocogoose_trial.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'thaisanslite';
+	src: url('../fonts/thaisanslite_r1.eot');
+	src: local('☺'), url('../fonts/thaisanslite_r1.woff') format('woff'), url('../fonts/thaisanslite_r1.ttf') format('truetype'), url('../fonts/thaisanslite_r1.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
