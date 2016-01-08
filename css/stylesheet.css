@@ -168,7 +168,7 @@ a:hover , a:focus{
     vertical-align: middle;
     position: relative;
     text-align: right;
-    font-size: 16px;    
+    font-size: 16px;
 	font-family: Scriptina,"Great Vibes",cursive;
     color: #c9a482;
     top: -5px;
@@ -255,7 +255,7 @@ img.img-we-do{
 
 .tufftex-text-head{
 	margin-bottom:20px;
-}               
+}
 
 h1.tufftex-subject{
 	font-family: 'Cocogoose';
@@ -374,7 +374,7 @@ p.text-detail-company{
 .head-profile .text-left{
 	color:#fff;
 }
-	
+
 .head-profile .text-left h1{
 	font-family: 'Cocogoose';
 	font-size:50px;
@@ -410,13 +410,13 @@ p.text-detail-company{
 .col-md-3.profile-inner:last-child{
 	margin-right:0;
 }
-	
+
 .profile-inner img{
 	display:block;
 	margin:0 auto 20px auto;
 	width:148px;
 	height:148px;
-	
+
 }
 
 .col-md-3.profile-inner p.name{
@@ -606,16 +606,16 @@ h1.contact-head{
 	white-space:normal;
 }
 
-@media screen and (max-width: 1024px) {
+/*@media screen and (max-width: 1024px) {
 	.col-md-2 .active.hover-pic {
 		top: 20%;
 		left: 28%;
 	}
-}
+}*/
 @media screen and (max-width: 768px) {
 .col-sm-3 .active.hover-pic{
-	top:20%;
-	left:29%;
+	/*top:20%;
+	left:29%;*/
 	font-size:15px;
 }
 
@@ -681,4 +681,63 @@ p.text-welcome {
 .col-sm-3 .hover-pic h3{
 	font-size:18px;
 	margin:2px 0;
+}
+
+/** extends style **/
+/*.list-block .img-service.col-sm-3:nth-child(4n+1) {
+	clear: none;
+}
+.list-block .img-service.col-xs-6:nth-child(2n+1) {
+	clear: left;
+}
+@media only screen and (min-width: 768px){
+	.list-block .img-service.col-xs-6:nth-child(2n+1) {
+		clear: none;
+	}
+	.list-block .img-service.col-sm-3:nth-child(4n+1) {
+		clear: left;
+	}
+}
+
+.list-block .img-service .open-product {
+
+}*/
+
+.block-display {
+	clear: both;
+}
+
+.list-block {
+	display: none;
+}
+
+.open-product {
+	display: none;
+}
+.product, .service {
+	cursor: pointer;
+}
+.product.active, .service.active {
+	background: green;
+}
+
+.hover-pic {
+	top: 50%;
+	left: 50%;
+	margin-top: -45px;
+	margin-left: -39px;
+	opacity: 0;
+	-webkit-transform: translate3d(-30%, 0, 0);
+					transform: translate3d(-30%, 0, 0);
+}
+
+.pic-simple:hover .hover-pic {
+	transition: all 0.5s;
+	opacity: 1;
+	-webkit-transform: none;
+					transform: none;
+}
+
+.pic-simple {
+	cursor: pointer;
 }
