@@ -212,16 +212,16 @@ a:hover , a:focus{
 
 h2.text-tufftex-group{
 	font-family: 'Scriptina';
-	font-size:700%;
+	font-size:600%;
 	color:#c9a482;
-	margin-top:15%;
+	margin-top:18%;
 }
 
 p.text-welcome-our{
 	font-family: 'Lateef';
 	color:#fff;
 	font-size:480%;
-	margin-top:30px;
+	margin-top:10px;
 	text-transform:uppercase;
 }
 
@@ -234,11 +234,14 @@ p.text-welcome{
 
 h2.text-we-do{
 	font-family: 'Scriptina';
-	font-size:70px;
+	font-size:50px;
 	color:#c9a482;
     margin-bottom: 20px;
+    margin-top: 90px;
 }
-
+.slide-item .tufftex-welcome img{
+    width: 65%;
+}
 img.img-we-do{
 	display:block;
 	margin:0 auto;
@@ -613,13 +616,41 @@ h1.contact-head{
 		left: 28%;
 	}
 }*/
+@media screen and (max-width: 1024px) {
+    h2.text-we-do{
+        font-size: 40px;
+        margin-top: -40px;
+}
+   .slide-item img{
+       height: 400px;
+   }
+    h2.text-tufftex-group{
+        font-size: 300%;
+    }
+    p.text-welcome-our{
+        font-size: 150%;
+    }
+    .slide-item .tufftex-welcome{
+        margin-top: 150px;
+    }
+    p.text-welcome{
+        font-size: 12px;
+        margin-top: -12px;
+    }
+    .tufftex-welcome{
+    margin-top: 120px;
+}
+    .slide-item .tufftex-welcome img {
+    width: 30%;
+    height: auto;
+}
+}
 @media screen and (max-width: 768px) {
 .col-sm-3 .active.hover-pic{
 	/*top:20%;
 	left:29%;*/
 	font-size:15px;
 }
-
 .company-inner h2 {
 	font-size:18px;
 }
@@ -627,8 +658,8 @@ p.text-detail-company {
 	padding: 3px 0px;
 }
 h2.text-tufftex-group {
-	font-size:40px;
-	margin-top:19%;
+	font-size:25px;
+	margin-top:0;
 }
 p.text-welcome-our {
 	font-size:24px;
@@ -673,10 +704,34 @@ h2.text-tufftex-group{
 .col-sm-3 .active.hover-pic p{
 	font-size:12px;
 }
-
+.slide-item img{
+       height: 150px;
+   }
 p.text-welcome {
 	font-size:14px;
 }
+ .slide-item .tufftex-welcome {
+    margin-top: 20px;
+}
+    h2.text-we-do{
+        margin-top: -35px;
+    }
+    .slide-item .tufftex-welcome img {
+    width: 45%;
+    height: auto;
+}
+    p.text-welcome-our {
+    font-size: 18px;
+    margin-top: 13px;
+}
+    p.text-welcome {
+    font-size: 9px;
+}
+    h2.text-we-do {
+    font-size: 25px;
+        margin-bottom: 0;
+    }
+    
 }
 
 .col-sm-3 .hover-pic h3{
@@ -744,9 +799,4 @@ p.text-welcome {
 }
 
 /**/
-.tufftex-welcome{
-    margin-top: 80px;
-}
-.tufftex-welcome img{
-    width: 65%;
-}
+
