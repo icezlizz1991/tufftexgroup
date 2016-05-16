@@ -567,7 +567,7 @@ p.text-detail-company{
 }
 
 .tufftex-contact{
-	padding:40px 0;
+	padding:15px 0;
 }
 h1.contact-head{
 	font-family: 'Cocogoose';
@@ -580,7 +580,7 @@ h1.contact-head{
 }
 
 .contact-inner p{
-	font-size: 18px;
+	font-size: 22px;
     white-space: pre-wrap;
     margin-bottom: 0px;
     letter-spacing: 1.5px;
