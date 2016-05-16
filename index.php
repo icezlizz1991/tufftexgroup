@@ -1,3 +1,9 @@
+<?php
+$pdo = new PDO("mysql:dbname=tufftexweb;host=localhost","root","", [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"]);
+// $pdo = new PDO("mysql:dbname=tufftex_web;host=localhost","tufftex_web","111111", [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"]);
+$result1 = $pdo->query("SELECT * FROM productservice ORDER BY id DESC", PDO::FETCH_ASSOC);
+$result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_ASSOC);
+?>
 <!doctype html>
 <html>
 <head>
@@ -244,28 +250,24 @@
 
                             <div class="row isotope block-display">
                             <?php
-                            for($i = 0; $i < 10; $i++){
-                              $inlineId = "open-product-".$i;
-                              $type = $i%3 == 0 ? "service-product": "service-service";
+                            foreach($result1 as $row){
+                              $inlineId = "open-product-".$row['id'];
+                              $type = $row['type'] == "product" ? "service-product": "service-service";
                             ?>
                             <div class="col-md-3 col-xs-6 col-sm-3 element-item img-service <?php echo $type;?>">
-                              <a href="#<?php echo $inlineId;?>" class="various">
-                              	<img class="img-responsive" src="images/product.jpg" alt="product">
+                              <a href="" data-selector="#<?php echo $inlineId;?>" class="various">
+                              	<img class="img-responsive" src="productservice/thumbs/<?php echo $row['image'];?>" alt="product">
                               </a>
                               <div class="open-product" id="<?php echo $inlineId;?>">
                               	<div class="container">
                                       <div class="col-md-12 open-detail">
                                           <div class="col-md-6 col-sm-6 pic-product">
-                                              <img class="img-responsive" src="images/open.jpg" alt="product">
+                                              <img class="img-responsive" src="productservice/<?php echo $row['image'];?>" alt="product">
                                           </div>
                                           <div class="col-md-6 col-sm-6 text-product">
-                                          	<h1>Virtual  Presenter <?php echo $inlineId;?></h1>
-                                              <p class="head-product-company">- Our visual presenter speak for themselves. -</p>
-                                              <p class="text-inner-product">“ เป็นนวัตกรรมใหม่ที่แปลกใหม่ล่ำหน้า นำเสนอทุกสิ่งที่คุณต้องการ ไม่ว่าจะเป็นสินค้าหรือบริการต่างๆ ของธุรกิจดึงดูดความสนใจแก่ผู้พบเห็น ”
-                                              คุณสมบัติที่โดดเด่นของ Virtual  Presenter
-
-                                              สามารถปรับเปลี่ยนข้อมูลที่จะประชาสัมพันธ์ได้รวดเร็ว เพื่อให้กลุ่มเป้าหมายรับข้อมูล ข่าวสารได้ทันที สร้างภาพลักษณ์ที่ดีให้แก่องค์กร มีความก้าวล้ำ ทันสมัย ประหยัดงบประมาณในการโฆษณา
-                                              ซึ่งจากเดิมมีการพิมพ์ใบปลิวหรือโบว์ชัวส์ ทำให้เสียเวลาและสิ้นเปลืองค่าใช้จ่าย</p>
+                                          	<h1><?php echo $row['name'];?></h1>
+                                              <p class="head-product-company"><?php echo $row['description'];?></p>
+                                              <p class="text-inner-product"><?php echo $row['detail'];?></p>
                                           </div>
                                       </div>
                              		</div>
@@ -324,9 +326,12 @@
                             </div>
                         </div>
                         <div class="pic-simple-work">
-                          <?php for($i=0; $i<20; $i++){?>
+                            <?php foreach($result2 as $row){ ?>
                             <div class="col-md-2 col-xs-6 col-sm-3 pic-simple">
-                                <img class="img-responsive" src="images/active-1.png" alt="ative simplework">
+                                <img class="img-responsive"
+                                  src="simplework/thumbs/<?php echo $row['image'];?>"
+                                  data-image="simplework/<?php echo $row['image'];?>"
+                                  alt="ative simplework">
                                 <div class="hover-pic text-center">
                                 	<img class="img-responsive" src="images/zoom.png" alt="zoom">
                                     <h3>image</h3>
@@ -385,7 +390,7 @@
 
                                     <div class="col-md-4 col-sm-4 text-center email">
                                     	<img class="img-responsive" src="images/email.png" alt="email">
-                                        <p>tufftex2011@gmail.com</p>
+                                        <p>info@tufftexgroup.com</p>
                                     </div>
                                     <div class="col-md-4 col-sm-4 text-center address">
                                     	<img class="img-responsive" src="images/address.png" alt="address">

@@ -13,7 +13,7 @@ $(function(){
 
   $(".various").click(function(e){
     e.preventDefault();
-    var href = $(this).attr("href");
+    var href = $(this).data("selector");
     $.fancybox.open({href : href});
   });
 
@@ -39,7 +39,11 @@ $(function(){
     $container.isotope({filter: filter});
     $('.filter-service-btn').removeClass('active');
     $(this).addClass('active');
-  }).filter('.product').click();
+  });
+
+  setTimeout(function(){
+    $('.filter-service-btn').filter('.product').click();
+  }, 200);
 });
 
 $(function(){
@@ -66,13 +70,13 @@ $(function(){
     var that = this;
     var items = [];
     var index = 0;
-    
-    $(".pic-simple:visible").each(function(index, el){
+
+    $(".pic-simple:visible").each(function(i, el){
       var obj = {
-        href: $('.img-responsive', el).attr('src')
+        href: $('.img-responsive', el).data('image')
       };
       if(el == that) {
-        index = index;
+        index = i;
       }
       items.push(obj);
     });
