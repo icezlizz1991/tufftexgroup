@@ -87,7 +87,7 @@ a:hover , a:focus{
 
 .tufftex-logo-wrapper a img.light-logo {
 	opacity: 1;
-	margin-top:5px;
+	margin-top:-5px;
 }
 
 .tufftex-menu{
@@ -234,8 +234,9 @@ p.text-welcome{
 
 h2.text-we-do{
 	font-family: 'Scriptina';
-	font-size:100px;
+	font-size:70px;
 	color:#c9a482;
+    margin-bottom: 20px;
 }
 
 img.img-we-do{
@@ -282,7 +283,7 @@ h1.contact-head span{
 }
 
 .text-detail-whatwedo p{
-	font-size:15px;
+	font-size:18px;
 }
 
 .tufftex-company{
@@ -361,7 +362,7 @@ p.text-detail-company{
 
 .mission p ,
 .vision p{
-	color: #6b6b6b;
+	color: #fff;
     font-size: 24px;
     white-space: pre-wrap;
     font-style: italic;
@@ -478,11 +479,11 @@ p.text-detail-company{
 }
 .our-client img{
 	display:block;
-	margin:0 auto;
+	margin:0px auto 20px auto;
 }
 
 .slide-client{
-	margin:30px 0 0 0;
+	margin:10px 0 0 0;
 }
 
 .slide-client .owl-theme .owl-controls {
@@ -740,4 +741,12 @@ p.text-welcome {
 
 .pic-simple {
 	cursor: pointer;
+}
+
+/**/
+.tufftex-welcome{
+    margin-top: 80px;
+}
+.tufftex-welcome img{
+    width: 65%;
 }

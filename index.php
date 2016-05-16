@@ -45,7 +45,7 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
                             <div class="tufftex-logo">
                             	<div class="tufftex-logo-wrapper" style="opacity: 1;">
                                     <a href="index.php" style="height:45px;">
-                                        <img class="light-logo img-responsive" src="images/logo-white.png" alt="logolight">
+                                        <img class="light-logo img-responsive" src="images/logo.png" alt="logolight">
                                         <!-- <img class="normal-logo img-responsive" src="images/logo.png" alt="logo">
                                         <img class="dark-logo img-responsive" src="images/logo.png" alt="logo"> -->
 
