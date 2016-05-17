@@ -234,13 +234,13 @@ p.text-welcome{
 
 h2.text-we-do{
 	font-family: 'Scriptina';
-	font-size:50px;
+	font-size:45px;
 	color:#c9a482;
     margin-bottom: 20px;
-    margin-top: 90px;
+    margin-top: 77px;
 }
 .slide-item .tufftex-welcome img{
-    width: 40%;
+    width: 50%;
 }
 img.img-we-do{
 	display:block;
@@ -286,7 +286,7 @@ h1.contact-head span{
 }
 
 .text-detail-whatwedo p{
-	font-size:18px;
+	font-size:20px;
 }
 
 .tufftex-company{
