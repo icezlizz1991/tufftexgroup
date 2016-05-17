@@ -214,7 +214,7 @@ h2.text-tufftex-group{
 	font-family: 'Scriptina';
 	font-size:600%;
 	color:#c9a482;
-	margin-top:18%;
+	margin-top:12%;
 }
 
 p.text-welcome-our{
@@ -240,7 +240,7 @@ h2.text-we-do{
     margin-top: 90px;
 }
 .slide-item .tufftex-welcome img{
-    width: 65%;
+    width: 40%;
 }
 img.img-we-do{
 	display:block;
