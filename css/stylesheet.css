@@ -268,7 +268,8 @@ h1.tufftex-subject{
 }
 
 h1.tufftex-subject span,
-h1.contact-head span{
+h1.contact-head span,
+h1.tuf-main-head span{
 	color:#c9a482;
 }
 
@@ -569,12 +570,14 @@ p.text-detail-company{
 .tufftex-contact{
 	padding:15px 0;
 }
-h1.contact-head{
+h1.contact-head,
+h1.tuf-main-head{
 	font-family: 'Cocogoose';
 	color:#000;
 }
 
-.contact-inner img{
+.contact-inner img,
+.tuf-main img{
 	display:block;
 	margin:15px auto;
 }
@@ -799,4 +802,46 @@ p.text-welcome {
 }
 
 /**/
-
+.tufftex-detail{
+    margin-top: 100px;
+}
+.tuf-main{
+    margin-bottom: 20px;
+}
+.simple-img img{
+    width: 100%;
+}
+.text-main-tuf{
+    margin: 20px 0;
+}
+.text-main-tuf p{
+    color: #222;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.text-main-tuf a{
+    color: #c9a482;
+    font-size: 15px;
+}
+.text-main-tuf a:hover{
+    text-decoration: none;
+}
+.tuf-our-product{
+    background-color: #383838;
+    padding: 60px 0;
+}
+.tuf-our-product:before{  
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    /*top: 0;*/
+    width: 3em;
+    height: 2.8em;
+    background-color: #fff;
+    margin: -6em 0 0 -1.3em;
+    -webkit-transform: rotate(35deg) skewX(-20deg);
+    -moz-transform: rotate(35deg) skewX(-20deg);
+    transform: rotate(35deg) skewX(-20deg);
+}
