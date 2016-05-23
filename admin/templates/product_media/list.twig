@@ -1,0 +1,118 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+<div class="container-fluid">
+  <h3 style="height: 40px;">Media <small>({{ product.name }})</small>
+    <a id="btn-image" class="btn btn-success btn-add" href="" style="right: 140px;">Add Image</a>
+    <a id="btn-youtube" class="btn btn-success btn-add" href="">Add Youtube</a>
+    <span id="uploading" class="hidden pull-right">Uploading....</span>
+  </h3>
+  <form id="form-youtube" class="form-inline pull-right hidden">
+    <div class="form-group">
+      <label>Yotube ID</label>
+      <input type="text" class="form-control" id="youtube-input" placeholder="Youtube ID">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+    <hr>
+  </form>
+  <table class="table table-bordered">
+    <tr>
+      <!-- <th class="text-center">id</th> -->
+      <th class="text-center">Name</th>
+      <th></th>
+    </tr>
+    {% for item in items %}
+    <tr>
+      <!-- <td class="text-center">{{ item.id }}</td> -->
+      <td>
+        <p><small>{{ item.type }}</small><p>
+        {% if item.type == "image" %}
+        <img src="{{ base_url() }}/../product_media/{{ item.image_path }}" height="60">
+        {% elseif item.type == "youtube" %}
+        <img src="http://img.youtube.com/vi/{{ item.youtube_id }}/default.jpg" height="60">
+        {% endif %}
+      </td>
+      <td>
+        <a href="{{ base_url() }}/product/{{ product.id }}/media/remove/{{ item.id }}"><i class="glyphicon glyphicon-remove"></i></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+<script>
+$(function(){
+  "use strict";
+
+  var $btnYoutube = $("#btn-youtube");
+  var $btnImage = $("#btn-image");
+  var $formYoutube = $("#form-youtube");
+
+  var $inputYoutube = $("#youtube-input");
+  var $inputImage = $("<input>", {"type": "file", "multiple": true, "accept": "image/*"});
+
+  var $uploading = $("#uploading")
+
+  function loading(){
+    $btnYoutube.addClass("hidden");
+    $btnImage.addClass("hidden");
+    $formYoutube.addClass("hidden");
+    $uploading.removeClass("hidden");
+  }
+
+  // add youtube
+  (function(){
+
+    $btnYoutube.click(function(e){
+      e.preventDefault();
+      $formYoutube.toggleClass("hidden");
+    });
+
+    $formYoutube.submit(function(e){
+      e.preventDefault();
+
+      $btnYoutube.prop("disable", true);
+      $("input, button", $formYoutube).prop("disable", true);
+      loading();
+
+      $.post("{{ base_url() }}/product/{{ product.id }}/media/add/youtube",
+        { youtube_id: $inputYoutube.val() },
+        function(data){
+          alert("Added");
+          window.location.reload();
+        }, "json");
+    });
+  })();
+
+  // add image
+  (function(){
+    $btnImage.click(function(e){
+      e.preventDefault();
+      $inputImage.click();
+    });
+
+    $inputImage.change(function(e){
+      var form = new FormData();
+      $.each(this.files, function(i, file){
+        form.append("image[]", file, file.name);
+      });
+
+      $btnImage.prop("disable", true);
+      loading();
+
+      $.ajax("{{ base_url() }}/product/{{ product.id }}/media/add/image", {
+        type: "post",
+        dataType: "json",
+        data: form,
+        contentType: false,
+        processData: false,
+        success: function(data){
+          alert("Uploaded.");
+          window.location.reload();
+        }
+      });
+    });
+  })();
+});
+</script>
+{% endblock %}

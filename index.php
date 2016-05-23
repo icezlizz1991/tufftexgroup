@@ -1,8 +1,11 @@
 <?php
-$pdo = new PDO("mysql:dbname=tufftexweb;host=localhost","root","", [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"]);
-// $pdo = new PDO("mysql:dbname=tufftex_web;host=localhost","tufftex_web","111111", [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"]);
-$result1 = $pdo->query("SELECT * FROM productservice ORDER BY id DESC", PDO::FETCH_ASSOC);
-$result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_ASSOC);
+require "Tufftex.php";
+
+use Tufftex\Tufftex;
+// $pdo = new PDO("mysql:dbname=tufftexweb;host=localhost","root","", [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"]);
+$pdo = Tufftex::getDb();
+$result1 = $pdo->query("SELECT * FROM product ORDER BY sort_order ASC", PDO::FETCH_ASSOC);
+// $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_ASSOC);
 ?>
 <!doctype html>
 <html>
@@ -20,7 +23,7 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
 <link href="css/owl.theme.css" rel="stylesheet">
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link href="css/lightcase.css" rel="stylesheet">
-<link rel="stylesheet" href="css/stylesheet.css" media="screen">
+<link rel="stylesheet" href="css/stylesheet.css?v=1" media="screen">
 
 <!-- Add fancyBox -->
 <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
@@ -73,8 +76,7 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
                                       	<ul class="nav navbar-nav">
                                             <li class="active"><a href="#home">home</a></li>
                                             <li class="menu-item"><a href="#aboutus">about us</a></li>
-                                            <li class="menu-item"><a href="#product-service" class="triggerOnClick" data-selector="#product-btn">product</a></li>
-                                            <li class="menu-item"><a href="#product-service" class="triggerOnClick" data-selector="#service-btn">services</a></li>
+                                            <li class="menu-item"><a href="#product">product</a></li>
                                             <li class="menu-item"><a href="#ourclient">our client</a></li>
                                             <li class="menu-item"><a href="#contact">contact</a></li>
         								</ul>
@@ -84,6 +86,7 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
                         	</div><!--tuf-menu-->
                         </div><!--End header-center-->
 
+                        <!--
                         <div class="header-right tel-right">
                         	<div class="text-company" style="opacity: 1;">
                             	<div class="tufftex-icon-list-item">
@@ -91,7 +94,9 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
                                     <p class="tufftex-icon-list-title">(66)-2101-8972</p>
                                 </div>
                             </div>
-                        </div><!--header-right-->
+                        </div>
+                      -->
+                        <!--header-right-->
 
                     </div><!--tufftex-vertical-align-containers-->
            		</div><!-- End menu-area -->
@@ -237,43 +242,29 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
                         </div>
                     </div><!-- End company -->
 
-                    <div class="tufftex-service" id="product-service">
+                    <div class="tufftex-service" id="product">
                     	<div class="container">
                         	<div class="col-md-12 tufftex-text-head">
                             	<h1 class="tufftex-subject text-center text-uppercase">OUR OF <span>SERVICES</span></h1>
                                 <p class="text-center">Delivery, Branding promos, Innovation passion, Outside The Box</p>
                             </div>
-                           	<div class="col-md-12">
+                           	<!-- <div class="col-md-12 hidden">
                             	<div id="product-btn" class="open active product text-center text-uppercase filter-service-btn" data-filter=".service-product"><a>PRODUCT</a></div>
                               <div id="service-btn" class="service text-center text-uppercase filter-service-btn" data-filter=".service-service"><a>SERVICE</a></div>
-                            </div>
+                            </div> -->
 
                             <div class="row isotope block-display">
-                            <?php
-                            foreach($result1 as $row){
-                              $inlineId = "open-product-".$row['id'];
-                              $type = $row['type'] == "product" ? "service-product": "service-service";
-                            ?>
-                            <div class="col-md-3 col-xs-6 col-sm-3 element-item img-service <?php echo $type;?>">
-                              <a href="" data-selector="#<?php echo $inlineId;?>" class="various">
-                              	<img class="img-responsive" src="productservice/thumbs/<?php echo $row['image'];?>" alt="product">
-                              </a>
-                              <div class="open-product" id="<?php echo $inlineId;?>">
-                              	<div class="container">
-                                      <div class="col-md-12 open-detail">
-                                          <div class="col-md-6 col-sm-6 pic-product">
-                                              <img class="img-responsive" src="productservice/<?php echo $row['image'];?>" alt="product">
-                                          </div>
-                                          <div class="col-md-6 col-sm-6 text-product">
-                                          	<h1><?php echo $row['name'];?></h1>
-                                              <p class="head-product-company"><?php echo $row['description'];?></p>
-                                              <p class="text-inner-product"><?php echo $row['detail'];?></p>
-                                          </div>
-                                      </div>
-                             		</div>
-                             </div><!-- End open-product -->
-                            </div>
-                            <?php }?>
+                              <?php
+                              foreach($result1 as $row){
+                                $inlineId = "open-product-".$row['id'];
+                                // $type = $row['type'] == "product" ? "service-product": "service-service";
+                              ?>
+                              <div class="col-md-3 col-xs-6 col-sm-3 element-item img-service thumbnail-center">
+                                <a href="product/<?php echo $row["name"];?>" class="various">
+                                	<img class="img-responsive" src="product_thumb/<?php echo $row["thumb"];?>" alt="product">
+                                </a>
+                              </div>
+                              <?php }?>
                           </div>
                         </div><!-- End container -->
 
@@ -288,6 +279,9 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
                             </div>
 
                             <div class="col-md-12 slide-client">
+                                <img class="img-responsive" src="images/our-client.png" alt="client">
+
+                                <!--
                                 <div id="owl-client" class="owl-carousel owl-theme">
                                       <div class="item"><img class="img-responsive" src="images/client_01.jpg" alt="client"></div>
                                       <div class="item"><img class="img-responsive" src="images/client_02.jpg" alt="client"></div>
@@ -314,11 +308,12 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
                                       <div class="item"><img class="img-responsive" src="images/client_24.jpg" alt="client"></div>
                                       <div class="item"><img class="img-responsive" src="images/client_25.jpg" alt="client"></div>
                                 </div>
+-->
                         	</div><!-- End slide -->
                     	</div><!-- End container -->
                     </div><!-- End our-client -->
 
-                    <div class="simple-work">
+                    <div class="simple-work hidden">
                     	<div class="container">
                         	<div class="col-md-12 tufftex-text-head">
                             	<h1 class="tufftex-subject text-center text-uppercase">SIMPLE <span>WORK</span></h1>
@@ -348,7 +343,8 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
                         </div>
                     </div><!--end -simple-work-->
 
-                    <div class="tufftex-profile">
+
+                    <div class="tufftex-profile hidden">
                     	<div class="action fullscreen parallax" style="background-image:url('images/cover.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
                         	<div class="head-profile">
                                 <div class="container">
@@ -382,6 +378,7 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
                         </div><!-- End parallax -->
                     </div><!-- END tufftex profile -->
 
+
                     <div id="contact" class="tufftex-contact">
                     	<div class="container">
                         	<div class="contact-inner">
@@ -390,7 +387,7 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
 
                                     <div class="col-md-4 col-sm-4 text-center email">
                                     	<img class="img-responsive" src="images/email.png" alt="email">
-                                        <p>info@tufftexgroup.com</p>
+                                        <p>tufftex2011@gmail.com</p>
                                     </div>
                                     <div class="col-md-4 col-sm-4 text-center address">
                                     	<img class="img-responsive" src="images/address.png" alt="address">
@@ -470,7 +467,7 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
     rewindSpeed : 1000,
 
     //Autoplay
-    autoPlay : false,
+    autoPlay : true,
     stopOnHover : false,
 
     // Navigation
@@ -480,7 +477,7 @@ $result2 = $pdo->query("SELECT * FROM simplework ORDER BY id DESC", PDO::FETCH_A
     scrollPerPage : false,
 
     //Pagination
-    pagination : true,
+    pagination : false,
     paginationNumbers: false,
 
     // Responsive
@@ -583,6 +580,6 @@ $(document).ready(function() {
 
 });
 </script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/main.js?v=1"></script>
 </body>
 </html>

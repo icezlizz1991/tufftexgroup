@@ -1,10 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: p2
- * Date: 7/16/14
- * Time: 5:28 PM
- */
-require_once 'bootstrap.php';
+// session_start();
+$bootstrap = [
+  "config_folder"=> __DIR__."/config",
+  "autoload"=> __DIR__."/vendor/autoload.php"
+  // "config"=> "../config.php",
+  // "config"=> "../config.php",
+  // "config"=> "../config.php",
+  // "config"=> "../config.php",
+];
 
-\Main\App::start();
+date_default_timezone_set("Asia/Bangkok");
+require($bootstrap["autoload"]);
+
+$app = new \Main\Main($bootstrap["config_folder"]);
+$app->run();

@@ -1,15 +1,15 @@
-OLO.PHP.Framework
-=================
+#requirement
+-php 5.5+
+-apache open rewrite module
+-mysql
 
-OLO PHP Framework
-- lightweight framework
+#install guide
+-open cmd in project folder
+-use command "php composer.phar install"
+-import db with file sql/gis.sql
+-config db with file config/medoo
 
+#Start server example
+php -S localhost:8080 -t public
 
-## Getting start
-
--use composer install library<br />
--setting file "private/AppConfig.php"<br />
-    base url: application > base_url<br />
-    path: route > base_path<br />
-    database: db > medoo > master<br />
-    
+#test localhost:8080/person

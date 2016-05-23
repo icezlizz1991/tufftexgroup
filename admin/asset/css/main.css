@@ -1,0 +1,47 @@
+#body {
+  padding-bottom: 20px;
+}
+
+.remove-btn {
+  color: red;
+}
+
+.input-group.date .glyphicon.glyphicon-remove {
+  color: rgb(237, 71, 71);
+}
+
+.btn-add {
+  position: absolute;
+  right: 20px;
+}
+
+.user-login {
+  /*line-height: 48px;*/
+}
+
+form {
+  /*margin: 0 auto;*/
+  max-width: 400px;
+}
+
+/*
+.map-container {
+  position: relative;
+}
+*/
+.today {
+  /*position: absolute;
+  top: 0;
+  right: 0;*/
+  color: #666666;
+}
+
+@media print {
+  #select-report {
+    display: none;
+  }
+}
+/*
+h3 {
+  text-align: center;
+}*/

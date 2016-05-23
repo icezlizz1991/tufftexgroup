@@ -1,0 +1,32 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+<div class="container-fluid">
+  <h3 style="height: 40px;">Product <a class="btn btn-success btn-add" href="{{ base_url() }}/product/add">Add</a></h3>
+  <table class="table table-bordered">
+    <tr>
+      <!-- <th class="text-center">id</th> -->
+      <th class="text-center">Thumb</th>
+      <th class="text-center">Name</th>
+      <th></th>
+    </tr>
+    {% for item in items %}
+    <tr>
+      <!-- <td class="text-center">{{ item.id }}</td> -->
+      <td class="text-center">
+        <img src="{{ base_url() }}/../product_thumb/{{ item.thumb }}" height="60">
+      </td>
+      <td>
+        {{ item.name }}
+        <p><small>{{ item.description }}</small><p>
+      </td>
+      <td class="text-center">
+        <a href="{{ base_url() }}/product/{{ item.id }}/media"><i class="glyphicon glyphicon-camera"></i></a>
+        <a href="{{ base_url() }}/product/edit/{{ item.id }}"><i class="glyphicon glyphicon-pencil"></i></a>
+        <a class="remove-btn" href="{{ base_url() }}/product/remove/{{ item.id }}"><i class="glyphicon glyphicon-remove"></i></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

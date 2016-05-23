@@ -11,12 +11,13 @@ $(function(){
   // var $serviceCtx = $("#tufftex-service");
   // $('a[data-rel^=lightcase]').lightcase();
 
-  $(".various").click(function(e){
-    e.preventDefault();
-    var href = $(this).data("selector");
-    $.fancybox.open({href : href});
-  });
+  // $(".various").click(function(e){
+  //   e.preventDefault();
+  //   var href = $(this).data("selector");
+  //   $.fancybox.open({href : href});
+  // });
 
+/*
   var $container = $('.isotope').isotope({
     itemSelector: '.element-item',
     layoutMode: 'fitRows',
@@ -44,11 +45,13 @@ $(function(){
   setTimeout(function(){
     $('.filter-service-btn').filter('.product').click();
   }, 200);
+  */
 });
 
 $(function(){
   "use strict";
 
+/*
   var $viewAllBtn = $(".view-all-btn");
   var $nextAll = $(".pic-simple").eq(11).nextAll();
   if($nextAll.size() === 0) {
@@ -84,4 +87,5 @@ $(function(){
       index: index
     });
   });
+  */
 });

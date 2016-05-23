@@ -328,8 +328,8 @@ h1.head-company{
 p.text-detail-company{
 	color:#fff;
 	font-weight: normal;
-    font-size: 17px;
-    text-align: left;
+  font-size: 23px;
+  text-align: left;
 }
 
 #owl-company .owl-buttons{
@@ -367,7 +367,7 @@ p.text-detail-company{
 .mission p ,
 .vision p{
 	color: #fff;
-    font-size: 24px;
+    font-size: 23px;
     white-space: pre-wrap;
     font-style: italic;
 }
@@ -521,6 +521,8 @@ p.text-detail-company{
 
 .img-service{
 	margin:10px 0;
+	width: 260px;
+	height: 190px;
 }
 
 .open-product{
@@ -734,7 +736,7 @@ p.text-welcome {
     font-size: 25px;
         margin-bottom: 0;
     }
-    
+
 }
 
 .col-sm-3 .hover-pic h3{
@@ -830,7 +832,7 @@ p.text-welcome {
     background-color: #383838;
     padding: 60px 0;
 }
-.tuf-our-product:before{  
+.tuf-our-product:before{
     content: ' ';
     display: block;
     position: absolute;
@@ -844,4 +846,23 @@ p.text-welcome {
     -webkit-transform: rotate(35deg) skewX(-20deg);
     -moz-transform: rotate(35deg) skewX(-20deg);
     transform: rotate(35deg) skewX(-20deg);
+}
+
+.thumbnail-center {
+  position: relative;
+  overflow: hidden;
+}
+.thumbnail-center img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.thumbnail-center img.portrait {
+  width: 100%;
+  height: auto;
 }
